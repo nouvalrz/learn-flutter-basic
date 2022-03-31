@@ -1,3 +1,6 @@
+import 'dart:math';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,15 +14,43 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("Latihan Container")),
-        body: Container(
-          color: Colors.red,
-          margin: const EdgeInsets.all(10),
-          padding: const EdgeInsets.all(20),
-          child: Container(
-            color: Colors.blue,
+        body: Column(children: [
+          Flexible(
+              child: Row(
+            children: [
+              Flexible(
+                child: Container(
+                  color: Colors.green,
+                ),
+                flex: 1,
+              ),
+              Flexible(
+                child: Container(
+                  color: Colors.black,
+                ),
+                flex: 1,
+              ),
+              Flexible(
+                child: Container(
+                  color: Colors.green,
+                ),
+                flex: 1,
+              ),
+            ],
+          )),
+          Flexible(
+            child: Container(
+              color: Colors.blue,
+            ),
+            flex: 2,
           ),
-        ),
+          Flexible(
+            child: Container(
+              color: Colors.red,
+            ),
+            flex: 1,
+          )
+        ]),
       ),
     );
   }
